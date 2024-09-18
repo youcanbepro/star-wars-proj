@@ -47,115 +47,42 @@ export const Home =  ()=> {
         }
       }, [])
       
-      const allPeopleOnPage = data?.results.map((people : any) => {
-		console.log(people);
+      const allResultsOnPage = data?.results.map((result : ResultType) => {
+		console.log(result);
 
 		return (
 			<div className={classNames(styles.people,styles.card)}>
-				<h2 key={people.name}>{people.name}</h2>
-				<p>Gender: {people.gender}</p>
-				<p>Birth Year: {people.birth_year}</p>
-				<p>Height: {people.height}</p>
-				<p>Hair Color: {people.hair_color}</p>
-				<p>Skin Color: {people.skin_color}</p>
-				<p>Eye Color: {people.eye_color}</p>
+				<h2 key={result.name||uuidv4()}>{result?.name}</h2>
+        {result.title&&<h2 key={result.title}>{result.title}</h2>}
+				{result.gender&&<p>Gender: {result.gender}</p>}
+				{result.birth_year&&<p>Birth Year: {result.birth_year}</p>}
+				{result.height&&<p>Height: {result.height}</p>}
+				{result.hair_color&&<p>Hair Color: {result.hair_color}</p>}
+				{result.skin_color&&<p>Skin Color: {result.skin_color}</p>}
+				{result.eye_color&&<p>Eye Color: {result.eye_color}</p>}
+        {result.climate&&<p>Climate: {result.climate}</p>}
+				{result.terrain&&<p>Terrain: {result.terrain}</p>}
+				{result.population&&<p>Population: {result.population}</p>}
+        {result.manufacturer&&<p>Manufacturer: {result.manufacturer}</p>}
+				{result.cost_in_credits&&<p>Cost in credits: {result.cost_in_credits}</p>}
+				{result.length&&<p>Length: {result.length}</p>}
+				{result.max_atmosphering_speed&&<p>Max atmosphering speed: {result.max_atmosphering_speed}</p>}
+				{result.crew&&<p>Crew: {result.crew}</p>}
+				{result.passengers&&<p>Passengers: {result.passengers}</p>}
+				{result.cargo_capacity&&<p>Cargo capacity: {result.cargo_capacity}</p>}
+        {result.average_height&&<p>Average Height: {result.average_height}</p>}
+				{result.average_lifespan&&<p>Average Lifespan: {result.average_lifespan}</p>}
+				{result.language&&<p>Language: {result.language}</p>}
+				{result.skin_colors&&<p>Skin Colors: {result.skin_colors}</p>}
+        {result.director&&<p>Director: {result.director}</p>}
+				{result.producer&&<p>Producer: {result.producer}</p>}
+				{result.release_date&&<p>Release Date: {result.release_date}</p>}
 				<br />
 			</div>
 		)
 	})
 
-  const allPlanetsOnPage = data?.results.map((planet : any) => {
-		console.log(planet);
-
-		return (
-      <div className={classNames(styles.people,styles.card)}>
-				<h2 key={planet.name}>{planet.name}</h2>
-				<p>Climate: {planet.climate}</p>
-				<p>Terrain: {planet.terrain}</p>
-				<p>Population: {planet.population}</p>
-				<br />
-			</div>
-		);
-	});
-
-  const allStarshipsOnPage = data?.results.map((Starship : any) => {
-		console.log(Starship);
-
-		return (
-			<div className={classNames(styles.people,styles.card)}>
-				<h2 key={Starship.name}>{Starship.name}</h2>
-				<p>Manufacturer: {Starship.manufacturer}</p>
-				<p>Cost in credits: {Starship.cost_in_credits}</p>
-				<p>Length: {Starship.length}</p>
-				<p>Max atmosphering speed: {Starship.max_atmosphering_speed}</p>
-				<p>Crew: {Starship.crew}</p>
-				<p>Passengers: {Starship.passengers}</p>
-				<p>Cargo capacity: {Starship.cargo_capacity}</p>
-				<br />
-			</div>
-		);
-	});
-  const allVehiclessOnPage = data?.results.map((Vehicles : any) => {
-		console.log(Vehicles);
-
-		return (
-			<div className={classNames(styles.people,styles.card)}>
-				<h2 key={Vehicles.name}>{Vehicles.name}</h2>
-				<p>Model: {Vehicles.model}</p>
-				<p>Cost in credits: {Vehicles.cost_in_credits}</p>
-				<p>Length: {Vehicles.length}</p>
-				<p>Max atmosphering speed: {Vehicles.max_atmosphering_speed}</p>
-				<p>Crew: {Vehicles.crew}</p>
-				<p>Passengers: {Vehicles.passengers}</p>
-				<p>Cargo capacity: {Vehicles.cargo_capacity}</p>
-				<br />
-			</div>
-		);
-	});
-  const allSpeciesOnPage = data?.results.map((Species : any) => {
-		console.log(Species);
-
-		return (
-			<div className={classNames(styles.people,styles.card)}>
-				<h2 key={Species.name}>{Species.name}</h2>
-				<p>Average Height: {Species.average_height}</p>
-				<p>Average Lifespan: {Species.average_lifespan}</p>
-				<p>Language: {Species.language}</p>
-				<p>Skin Colors: {Species.skin_colors}</p>
-			
-				<br />
-			</div>
-		);
-	});
-  const allFilmsOnPage = data?.results.map((Films : any) => {
-		console.log(Films);
-
-		return (
-			<div className={classNames(styles.people,styles.card)}>
-				<h2 key={Films.title}>{Films.title}</h2>
-				<p>Director: {Films.director}</p>
-				<p>Producer: {Films.producer}</p>
-				<p>Release Date: {Films.release_date}</p>
-			
-				<br />
-			</div>
-		);
-	});
-
-  const getResults =()=>{
-    if(apiEndPoint==EApiQueryType.StarShips)
-      return allStarshipsOnPage
-    if(apiEndPoint==EApiQueryType.People)
-      return allPeopleOnPage
-    if(apiEndPoint==EApiQueryType.Planets)
-      return allPlanetsOnPage
-    if(apiEndPoint==EApiQueryType.Films)
-      return allFilmsOnPage
-    if(apiEndPoint==EApiQueryType.Species)
-      return allSpeciesOnPage
-    if(apiEndPoint==EApiQueryType.Vehicles)
-      return allVehiclessOnPage
-  }
+ 
 
     return (
         <div className={styles.container}>
@@ -169,7 +96,7 @@ export const Home =  ()=> {
         </div>
 
         {data&&!removeData&&<div className={styles.gridContainer}>{
-           getResults()
+           allResultsOnPage
           }</div>}
 <Divider/>
             <Button disabled={removeData==null||removeData==true} onClick={()=>setRemoveData(true)}>Clear Data</Button>
