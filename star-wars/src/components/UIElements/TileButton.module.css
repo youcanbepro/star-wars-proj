@@ -19,7 +19,7 @@
     border-radius: 12px;
   }
   
-  .name {
+  .selectedName {
     font-size: var(--textM);
     color: #d1d2d5;
     text-align: center ;
@@ -44,7 +44,7 @@
       0 15px 0 #121212, 
       0 22px 30px rgba(0, 0, 0, 0.9);
   }
-  .selectedName {
+  .name {
     font-size: var(--textM);
     color: white;
     text-align: center ;

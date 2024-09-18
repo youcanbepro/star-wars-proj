@@ -110,7 +110,7 @@ export const Home =  ()=> {
         <Header labelText='Star Wars'></Header>
         <Divider/>
         <div className={styles.content}>
-        {Object.values(EApiQueryType).map((val)=>  (<TileButton key={uuidv4()} name={getEnumKeyByEnumValue(EApiQueryType,val)} onClick={()=>{
+        {Object.values(EApiQueryType).map((val)=>  (<TileButton isSelected={apiEndPoint==val} key={uuidv4()} name={getEnumKeyByEnumValue(EApiQueryType,val)} onClick={()=>{
           getDataFromServer(val)
          
         }}></TileButton>))}
@@ -119,8 +119,9 @@ export const Home =  ()=> {
         {data&&!removeData&&<div className={styles.gridContainer}>{
            getResults()
           }</div>}
+<Divider/>
             <Button disabled={removeData} onClick={()=>setRemoveData(true)}>Clear Data</Button>
-        <Divider/>
+        
         <Header kindOfElement='footer' labelText='@2024 Rahul Ranjan'></Header>
     </div>
     )
