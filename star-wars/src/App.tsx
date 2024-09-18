@@ -6,9 +6,6 @@ import { lazily } from './utils/Lazily'
 
 
 export const App =  ()=> {
-
-
-
   return (
         <Suspense fallback={<p>Loading...</p>}>
 <BrowserRouter >

@@ -1,0 +1,11 @@
+
+
+.header{
+    height: var(--HeaderHeight);
+    text-align: center;
+    padding-inline: 48px;
+    line-height: 64px;
+    width: 100%;
+    background-color: bisque;
+    
+}
