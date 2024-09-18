@@ -1,5 +1,11 @@
 import styles from './Header.module.css'
+import cx from 'classnames'
 
-export const Header = ()=> {
-return (<div className={styles.header}></div>)
+type ElementType={
+    kindOfElement?:"header"|"footer"
+}
+export const Header = ({kindOfElement}:ElementType)=> {
+return (<div className={cx(styles.header ,{
+    [styles.footer]: kindOfElement=="footer",
+  })}></div>)
 }

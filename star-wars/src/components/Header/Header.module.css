@@ -9,3 +9,8 @@
     background-color: bisque;
     
 }
+
+.footer{
+    height: var(--FooterHeight);
+    background-color: black;
+}

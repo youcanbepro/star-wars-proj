@@ -5,16 +5,27 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
 }
 
 .content{
     background-color: #fff;
+    padding: 2rem;
 }
-.footer{
-    height: var(--FooterHeight);
-    text-align: center;
-    padding-inline: 48px;
-    line-height: 64px;
-    width: 100vw;
-    background-color: bisque;
+
+.card {
+	border-radius: 25px;
+	background-color: rgba(0, 0, 0, 0.9);
+	width: 250px;
+	min-width: 250px;
+	text-wrap: wrap;
+	text-align: center;
+	margin: 15px;
+	padding: 5px;
+}
+
+.people {
+	border: 3px solid blue;
+	text-shadow: 1px 1px 1px blue;
+	display: inline-block;
 }
