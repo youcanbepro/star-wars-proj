@@ -95,6 +95,52 @@ export const Home =  ()=> {
 			</div>
 		);
 	});
+  const allVehiclessOnPage = data?.results.map((Vehicles : any) => {
+		console.log(Vehicles);
+
+		return (
+			<div className={classNames(styles.people,styles.card)}>
+				<h2 key={Vehicles.name}>{Vehicles.name}</h2>
+				<p>Model: {Vehicles.model}</p>
+				<p>Cost in credits: {Vehicles.cost_in_credits}</p>
+				<p>Length: {Vehicles.length}</p>
+				<p>Max atmosphering speed: {Vehicles.max_atmosphering_speed}</p>
+				<p>Crew: {Vehicles.crew}</p>
+				<p>Passengers: {Vehicles.passengers}</p>
+				<p>Cargo capacity: {Vehicles.cargo_capacity}</p>
+				<br />
+			</div>
+		);
+	});
+  const allSpeciesOnPage = data?.results.map((Species : any) => {
+		console.log(Species);
+
+		return (
+			<div className={classNames(styles.people,styles.card)}>
+				<h2 key={Species.name}>{Species.name}</h2>
+				<p>Average Height: {Species.average_height}</p>
+				<p>Average Lifespan: {Species.average_lifespan}</p>
+				<p>Language: {Species.language}</p>
+				<p>Skin Colors: {Species.skin_colors}</p>
+			
+				<br />
+			</div>
+		);
+	});
+  const allFilmsOnPage = data?.results.map((Films : any) => {
+		console.log(Films);
+
+		return (
+			<div className={classNames(styles.people,styles.card)}>
+				<h2 key={Films.title}>{Films.title}</h2>
+				<p>Director: {Films.director}</p>
+				<p>Producer: {Films.producer}</p>
+				<p>Release Date: {Films.release_date}</p>
+			
+				<br />
+			</div>
+		);
+	});
 
   const getResults =()=>{
     if(apiEndPoint==EApiQueryType.StarShips)
@@ -103,6 +149,12 @@ export const Home =  ()=> {
       return allPeopleOnPage
     if(apiEndPoint==EApiQueryType.Planets)
       return allPlanetsOnPage
+    if(apiEndPoint==EApiQueryType.Films)
+      return allFilmsOnPage
+    if(apiEndPoint==EApiQueryType.Species)
+      return allSpeciesOnPage
+    if(apiEndPoint==EApiQueryType.Vehicles)
+      return allVehiclessOnPage
   }
 
     return (
