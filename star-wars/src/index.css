@@ -11,7 +11,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --HeaderHeight: 120px;
-  --FooterHeight: 118px;
+  --FooterHeight: 84px;
+  --CenterWidth:1668px;
+  --CenterHeight:1254px;
+  --textS:18px;
+  --textM:24px
 }
 
 
@@ -21,6 +25,10 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
+  width: var(--CenterWidth);
+  transform: scale(1);
+  box-sizing: border-box;
+  overflow: hidden;
   min-height: 100vh;
 }
 

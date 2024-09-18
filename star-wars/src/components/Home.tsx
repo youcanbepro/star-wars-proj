@@ -71,7 +71,8 @@ export const Home =  ()=> {
       </button>
         </div>
         {data&&!removeData&&allPeopleOnPage}
-        <Header kindOfElement='footer'></Header>
+        
+        <Header kindOfElement='footer' labelText='@2024 Rahul Ranjan'></Header>
      
     </div>
  

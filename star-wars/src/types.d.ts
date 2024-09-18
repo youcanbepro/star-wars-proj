@@ -1,10 +1,9 @@
 type RespExampleType = {
     count:number
-    results:[]
+    results:object[]
     previous:""
     next:""
   };
 
-  type ApiQueryType = {
-    value: "people"|"planets"|"species"|"films"|"starships"|"vehicles";
-  };
+  type ApiQueryType = "people"|"planets"|"species"|"films"|"starships"|"vehicles";
+  

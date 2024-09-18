@@ -6,11 +6,21 @@
     padding-inline: 48px;
     line-height: 64px;
     width: 100%;
-    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    
     
 }
 
 .footer{
     height: var(--FooterHeight);
     background-color: black;
+}
+
+.labelText{
+    font-size: var(--textS);
 }
