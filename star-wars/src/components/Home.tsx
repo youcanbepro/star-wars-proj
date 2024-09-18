@@ -57,7 +57,7 @@ export const Home =  ()=> {
 
     return (
         <div className={styles.container}>
-        <Header ></Header>
+        <Header labelText='Star Wars'></Header>
         <div className={styles.content}>
         <button className={styles.button} onClick={
            ()=>  {
@@ -71,7 +71,7 @@ export const Home =  ()=> {
       </button>
         </div>
         {data&&!removeData&&allPeopleOnPage}
-        
+
         <Header kindOfElement='footer' labelText='@2024 Rahul Ranjan'></Header>
      
     </div>
