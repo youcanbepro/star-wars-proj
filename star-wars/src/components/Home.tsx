@@ -3,9 +3,10 @@ import styles from './Home.module.css'
 import { Header } from './Header/Header';
 import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
+import { TileButton } from './UIElements/TileButton';
 
 export const Home =  ()=> {
-   
+
    const value="people"
     const urlWithProxy = `https://swapi.py4e.com/api/${value}`;
     const [data, setData] = useState<RespExampleType|null>(null)
@@ -25,7 +26,7 @@ export const Home =  ()=> {
       }
 
     useEffect(() => {
-        /* This is added to have the long press functionality 
+        /* This is added to have the long press functionality
           */
         window.oncontextmenu = (event: MouseEvent) => {
           if ((event as PointerEvent)?.pointerType === "mouse") {
@@ -34,9 +35,9 @@ export const Home =  ()=> {
         }
       }, [])
 
-     
 
-      
+
+
       const allPeopleOnPage = data?.results.map((people:any) => {
 		console.log(people);
 
@@ -59,23 +60,21 @@ export const Home =  ()=> {
         <div className={styles.container}>
         <Header labelText='Star Wars'></Header>
         <div className={styles.content}>
-        <button className={styles.button} onClick={
-           ()=>  {
-            setRemoveData(false)
-            getDataFromServer()}}>
-        Get Data
-      </button>
-      <button className={styles.button} onClick={()=>
-            setRemoveData(true)}>
-        Remove Data
-      </button>
+        <TileButton name={"People"}></TileButton>
+        <TileButton name={"Planet"}></TileButton>
+        <TileButton name={"Species"}></TileButton>
+        <TileButton name={"Films"}></TileButton>
+        <TileButton name={"Starships"}></TileButton>
+        <TileButton name={"Vehicles"} isSelected></TileButton>
+       
         </div>
         {data&&!removeData&&allPeopleOnPage}
 
+
         <Header kindOfElement='footer' labelText='@2024 Rahul Ranjan'></Header>
-     
+
     </div>
- 
+
     )
   }
 
