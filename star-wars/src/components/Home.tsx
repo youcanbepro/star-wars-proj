@@ -84,7 +84,8 @@ export const Home =  ()=> {
         }}></TileButton>
        
         </div>
-        {data&&!removeData&&allPeopleOnPage}
+        <div className={styles.gridContainer}>{data&&!removeData&&allPeopleOnPage}</div>
+       
 
 
         <Header kindOfElement='footer' labelText='@2024 Rahul Ranjan'></Header>

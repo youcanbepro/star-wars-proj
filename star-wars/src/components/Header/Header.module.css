@@ -20,7 +20,7 @@
     height: var(--FooterHeight);
     font-size: var(--textS);
     color: #f1f2f5;
-    box-shadow: 2px 4px 4px 2px rgba(46, 2, 2, 0.9); 
+    box-shadow: 2px 4px 4px 2px rgba(151, 151, 151, 0.9); 
 }
 
 .labelText{

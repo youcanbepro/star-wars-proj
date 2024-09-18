@@ -29,9 +29,8 @@ body {
   width: var(--CenterWidth);
   transform: scale(1);
   box-sizing: border-box;
-  overflow: hidden;
   min-height: 100vh;
-}
+  overflow-x: hidden;
 
 
 
