@@ -4,17 +4,27 @@ import { Header } from './Header/Header';
 import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames';
 import { TileButton } from './UIElements/TileButton';
+import { getEnumKeyByEnumValue } from '../utils/utilityCollection';
+
+export enum EApiQueryType {
+  People="people",
+  Planets="planets",
+  Species="species",
+  Films="films",
+  StarShips="starships",
+  Vehicles="vehicles",
+ };
 
 export const Home =  ()=> {
 
     const [data, setData] = useState<RespExampleType|null>(null)
-    const [apiEndPoint,setApiEndPoint]= useState<ApiQueryType>("people")
     const [removeData,setRemoveData]= useState(false)
-    const urlWithProxy = `https://swapi.py4e.com/api/${apiEndPoint}`;
+    const keys = Object.keys(EApiQueryType)
+    console.log(keys)
 
-    async function getDataFromServer(): Promise<void> {
+    async function getDataFromServer(apiEndPoint:EApiQueryType): Promise<void> {
         try {
-            const res = await fetch(urlWithProxy,{ mode: 'cors',method:'GET' },);
+            const res = await fetch(`https://swapi.py4e.com/api/${apiEndPoint}`,{ mode: 'cors',method:'GET' },);
         const data: RespExampleType  = await res.json();
         setData(data)
         } catch (error) {
@@ -58,40 +68,13 @@ export const Home =  ()=> {
         <div className={styles.container}>
         <Header labelText='Star Wars'></Header>
         <div className={styles.content}>
-        <TileButton name={"People"} onClick={()=>{
-          setApiEndPoint("people")
-          getDataFromServer()
-        }}></TileButton>
-        <TileButton name={"Planet"} onClick={()=>{
-          setApiEndPoint("planets")
-          getDataFromServer()
-        }}></TileButton>
-        <TileButton name={"Species"} onClick={()=>{
-          setApiEndPoint("species")
-          getDataFromServer()
-        }}></TileButton>
-        <TileButton name={"Films"} onClick={()=>{
-          setApiEndPoint("films")
-          getDataFromServer()
-        }}></TileButton>
-        <TileButton name={"Starships"} onClick={()=>{
-          setApiEndPoint("starships")
-          getDataFromServer()
-        }}></TileButton>
-        <TileButton name={"Vehicles"} onClick={()=>{
-          setApiEndPoint("vehicles")
-          getDataFromServer()
-        }}></TileButton>
-       
+        {Object.values(EApiQueryType).map((val)=>  (<TileButton key={uuidv4()} name={getEnumKeyByEnumValue(EApiQueryType,val)} onClick={()=>{
+          getDataFromServer(val)
+        }}></TileButton>))}
         </div>
         <div className={styles.gridContainer}>{data&&!removeData&&allPeopleOnPage}</div>
-       
-
-
         <Header kindOfElement='footer' labelText='@2024 Rahul Ranjan'></Header>
-
     </div>
-
     )
   }
 
