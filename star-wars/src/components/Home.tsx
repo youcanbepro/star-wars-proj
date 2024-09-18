@@ -20,7 +20,7 @@ export const Home =  ()=> {
 
     const [data, setData] = useState<RespExampleType|null>(null)
     const [apiEndPoint,setApiEndPoint]= useState<EApiQueryType|null>(null)
-    const [removeData,setRemoveData]= useState(false)
+    const [removeData,setRemoveData]= useState<boolean|null>(null)
     const keys = Object.keys(EApiQueryType)
     console.log(keys)
 
@@ -172,7 +172,7 @@ export const Home =  ()=> {
            getResults()
           }</div>}
 <Divider/>
-            <Button disabled={removeData} onClick={()=>setRemoveData(true)}>Clear Data</Button>
+            <Button disabled={removeData==null||removeData==true} onClick={()=>setRemoveData(true)}>Clear Data</Button>
         
         <Header kindOfElement='footer' labelText='@2024 Rahul Ranjan'></Header>
     </div>
