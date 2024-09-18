@@ -69,8 +69,8 @@ export const Home =  ()=> {
             setRemoveData(true)}>
         Remove Data
       </button>
-     {data&&!removeData&&allPeopleOnPage}
         </div>
+        {data&&!removeData&&allPeopleOnPage}
         <Header kindOfElement='footer'></Header>
      
     </div>
