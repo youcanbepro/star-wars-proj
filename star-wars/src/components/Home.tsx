@@ -7,12 +7,10 @@ import { TileButton } from './UIElements/TileButton';
 
 export const Home =  ()=> {
 
-   const value="people"
-    const urlWithProxy = `https://swapi.py4e.com/api/${value}`;
     const [data, setData] = useState<RespExampleType|null>(null)
-
+    const [apiEndPoint,setApiEndPoint]= useState<ApiQueryType>("people")
     const [removeData,setRemoveData]= useState(false)
-
+    const urlWithProxy = `https://swapi.py4e.com/api/${apiEndPoint}`;
 
     async function getDataFromServer(): Promise<void> {
         try {
@@ -60,12 +58,30 @@ export const Home =  ()=> {
         <div className={styles.container}>
         <Header labelText='Star Wars'></Header>
         <div className={styles.content}>
-        <TileButton name={"People"}></TileButton>
-        <TileButton name={"Planet"}></TileButton>
-        <TileButton name={"Species"}></TileButton>
-        <TileButton name={"Films"}></TileButton>
-        <TileButton name={"Starships"}></TileButton>
-        <TileButton name={"Vehicles"} isSelected></TileButton>
+        <TileButton name={"People"} onClick={()=>{
+          setApiEndPoint("people")
+          getDataFromServer()
+        }}></TileButton>
+        <TileButton name={"Planet"} onClick={()=>{
+          setApiEndPoint("planets")
+          getDataFromServer()
+        }}></TileButton>
+        <TileButton name={"Species"} onClick={()=>{
+          setApiEndPoint("species")
+          getDataFromServer()
+        }}></TileButton>
+        <TileButton name={"Films"} onClick={()=>{
+          setApiEndPoint("films")
+          getDataFromServer()
+        }}></TileButton>
+        <TileButton name={"Starships"} onClick={()=>{
+          setApiEndPoint("starships")
+          getDataFromServer()
+        }}></TileButton>
+        <TileButton name={"Vehicles"} onClick={()=>{
+          setApiEndPoint("vehicles")
+          getDataFromServer()
+        }}></TileButton>
        
         </div>
         {data&&!removeData&&allPeopleOnPage}
