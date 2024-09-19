@@ -12,14 +12,12 @@
   -moz-osx-font-smoothing: grayscale;
   --HeaderHeight: 120px;
   --FooterHeight: 84px;
-  --CenterWidth:1668px;
-  --CenterHeight:1254px;
-  --textS:18px;
-  --textM:24px;
-  --textL:44px
+  --CenterWidth: 1668px;
+  --CenterHeight: 1254px;
+  --textS: 18px;
+  --textM: 24px;
+  --textL: 44px;
 }
-
-
 
 body {
   margin: 0;
@@ -31,8 +29,4 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   overflow-x: hidden;
-
-
 }
-
-

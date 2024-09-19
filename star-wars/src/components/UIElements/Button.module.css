@@ -1,66 +1,55 @@
 .root {
-    max-width: 122px;
-    max-height: 62px;
-    width: 100%;
-    height: 112px;
-    box-shadow:
-      0 5px 10px rgb(0 0 0 / 50%),
-      inset 0 0 0 2px rgb(204 204 204 / 10%);
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    justify-content: space-around;
-    font-size: var(--textS);
-    white-space: nowrap;
-  
-    --boxed: true;
-  
-    border: 3px solid #2f3037;
-    background: linear-gradient(0deg, rgba(45, 85, 242, 0.02), rgba(45, 85, 242, 0.02)),
-      linear-gradient(180deg, rgba(31, 31, 31, 0) 0%, rgba(31, 31, 31, 0.6) 100%), #000;
-    border-radius: 12px;
-    align-items: center;
-  }
- 
-  
-  .root.light {
-    background-color: #25272a;
-    border: 1px solid #44454d;
-  }
-  
-  
-  
-  .buttonLabelText {
-    font-size: var(--textS);
-  }
-  
-  
-  
-  .root.textAndSubText {
-    align-items: flex-start;
-    padding-left: 50px;
-    line-height: 45px;
-    padding-top: 8px;
-  }
-  
-  .root.pressed.buttonHighlightBottom {
-    border-bottom: 4px solid rgb(252 252 252);
-    background: #25272c;
-  }
-  
-  .root.pressed.buttonHighlightLeft {
-    border-left: 4px solid rgb(252 252 252);
-    background: #25272c;
-  }
-  
- 
-  
-  .buttonLabelSubText {
-    font-size: 28px;
-    color: #ababab;
-  }
-  
-  
-  
-  
+  max-width: 122px;
+  max-height: 62px;
+  width: 100%;
+  height: 112px;
+  box-shadow:
+    0 5px 10px rgb(0 0 0 / 50%),
+    inset 0 0 0 2px rgb(204 204 204 / 10%);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-around;
+  font-size: var(--textS);
+  white-space: nowrap;
+
+  --boxed: true;
+
+  border: 3px solid #2f3037;
+  background: linear-gradient(0deg, rgba(45, 85, 242, 0.02), rgba(45, 85, 242, 0.02)),
+    linear-gradient(180deg, rgba(31, 31, 31, 0) 0%, rgba(31, 31, 31, 0.6) 100%), #000;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.root.light {
+  background-color: #25272a;
+  border: 1px solid #44454d;
+}
+
+.buttonLabelText {
+  font-size: var(--textS);
+}
+
+.root.textAndSubText {
+  align-items: flex-start;
+  padding-left: 50px;
+  line-height: 45px;
+  padding-top: 8px;
+}
+
+.root.pressed.buttonHighlightBottom {
+  border-bottom: 4px solid rgb(252 252 252);
+  background: #25272c;
+}
+
+.root.pressed.buttonHighlightLeft {
+  border-left: 4px solid rgb(252 252 252);
+  background: #25272c;
+}
+
+.buttonLabelSubText {
+  font-size: 28px;
+  color: #ababab;
+}

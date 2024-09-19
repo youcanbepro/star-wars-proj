@@ -111,7 +111,6 @@ export const Home = () => {
       >
         Clear Data
       </Button>
-
       <Header kindOfElement="footer" labelText="@2024 Rahul Ranjan"></Header>
     </div>
   );

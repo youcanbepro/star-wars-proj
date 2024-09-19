@@ -1,37 +1,34 @@
-
-
-.header{
-    height: var(--HeaderHeight);
-    text-align: center;
-    padding-inline: 48px;
-    line-height: 64px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap:20px;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    font-size: var(--textL);
-    color: #ffee00;
+.header {
+  height: var(--HeaderHeight);
+  text-align: center;
+  padding-inline: 48px;
+  line-height: 64px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  font-size: var(--textL);
+  color: #ffee00;
 }
 
-.footer{
-    height: var(--FooterHeight);
-    font-size: var(--textS);
-    color: #f1f2f5;
-    box-shadow: 2px 4px 4px 2px rgba(151, 151, 151, 0.9); 
-    color: #202020;
-    letter-spacing: .1em;
-    text-shadow: 
-      -1px -1px 1px #111, 
-      2px 2px 1px #363636;
+.footer {
+  height: var(--FooterHeight);
+  font-size: var(--textS);
+  color: #f1f2f5;
+  box-shadow: 2px 4px 4px 2px rgba(151, 151, 151, 0.9);
+  color: #202020;
+  letter-spacing: 0.1em;
+  text-shadow:
+    -1px -1px 1px #111,
+    2px 2px 1px #363636;
 }
 
-.labelText{
-        letter-spacing: .1em;
-        text-shadow: 
-          -1px -1px 1px #111, 
-          2px 2px 1px #363636;
-      
+.labelText {
+  letter-spacing: 0.1em;
+  text-shadow:
+    -1px -1px 1px #111,
+    2px 2px 1px #363636;
 }
