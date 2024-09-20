@@ -50,11 +50,9 @@ export const Home = () => {
   }, []);
 
   const allResultsOnPage = data?.results.map((result: ResultType) => {
-    console.log(result);
-
     return (
-      <div className={classNames(styles.people, styles.card)}>
-        <h2 key={result.name || uuidv4()}>{result?.name}</h2>
+      <div key={uuidv4()} className={classNames(styles.people, styles.card)}>
+        {result.name && <h2 key={result.name}>{result.name}</h2>}
         {result.title && <h2 key={result.title}>{result.title}</h2>}
         {result.gender && <p>Gender: {result.gender}</p>}
         {result.birth_year && <p>Birth Year: {result.birth_year}</p>}
